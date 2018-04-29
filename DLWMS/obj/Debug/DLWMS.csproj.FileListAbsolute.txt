@@ -1,0 +1,9 @@
+C:\Users\asus\source\repos\DLWMS\DLWMS\bin\DLWMS.dll.config
+C:\Users\asus\source\repos\DLWMS\DLWMS\bin\DLWMS.dll
+C:\Users\asus\source\repos\DLWMS\DLWMS\bin\DLWMS.pdb
+C:\Users\asus\source\repos\DLWMS\DLWMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\asus\source\repos\DLWMS\DLWMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\asus\source\repos\DLWMS\DLWMS\obj\Debug\DLWMS.csprojResolveAssemblyReference.cache
+C:\Users\asus\source\repos\DLWMS\DLWMS\obj\Debug\DLWMS.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\DLWMS\DLWMS\obj\Debug\DLWMS.dll
+C:\Users\asus\source\repos\DLWMS\DLWMS\obj\Debug\DLWMS.pdb

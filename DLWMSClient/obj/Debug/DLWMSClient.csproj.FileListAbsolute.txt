@@ -1,0 +1,10 @@
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\bin\Debug\DLWMSClient.exe.config
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\bin\Debug\DLWMSClient.exe
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\bin\Debug\DLWMSClient.pdb
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.csprojResolveAssemblyReference.cache
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.Form1.resources
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.Properties.Resources.resources
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.csproj.GenerateResource.Cache
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.csproj.CoreCompileInputs.cache
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.exe
+C:\Users\asus\source\repos\DLWMS\DLWMSClient\obj\Debug\DLWMSClient.pdb

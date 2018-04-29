@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGodineStudija">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGodineStudijaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGodineStudijaResult" type="tns:ArrayOfGodinaStudija" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGodinaStudija">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GodinaStudija" nillable="true" type="tns:GodinaStudija" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GodinaStudija">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Oznaka" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudente">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStudenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudenteResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Student" nillable="true" type="tns:Student" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Student">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prezime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GodinaStudija" type="tns:GodinaStudija" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudenteByGodinaStudija">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdGodinaStudija" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudenteByGodinaStudijaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudenteByGodinaStudijaResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGodineStudijaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGodineStudija" />
+  </wsdl:message>
+  <wsdl:message name="GetGodineStudijaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGodineStudijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudenteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudente" />
+  </wsdl:message>
+  <wsdl:message name="GetStudenteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudenteByGodinaStudijaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudenteByGodinaStudija" />
+  </wsdl:message>
+  <wsdl:message name="GetStudenteByGodinaStudijaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudenteByGodinaStudijaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MojServisSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGodineStudija">
+      <wsdl:input message="tns:GetGodineStudijaSoapIn" />
+      <wsdl:output message="tns:GetGodineStudijaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudente">
+      <wsdl:input message="tns:GetStudenteSoapIn" />
+      <wsdl:output message="tns:GetStudenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudenteByGodinaStudija">
+      <wsdl:input message="tns:GetStudenteByGodinaStudijaSoapIn" />
+      <wsdl:output message="tns:GetStudenteByGodinaStudijaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MojServisSoap" type="tns:MojServisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGodineStudija">
+      <soap:operation soapAction="http://tempuri.org/GetGodineStudija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudente">
+      <soap:operation soapAction="http://tempuri.org/GetStudente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudenteByGodinaStudija">
+      <soap:operation soapAction="http://tempuri.org/GetStudenteByGodinaStudija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MojServisSoap12" type="tns:MojServisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGodineStudija">
+      <soap12:operation soapAction="http://tempuri.org/GetGodineStudija" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudente">
+      <soap12:operation soapAction="http://tempuri.org/GetStudente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudenteByGodinaStudija">
+      <soap12:operation soapAction="http://tempuri.org/GetStudenteByGodinaStudija" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MojServis">
+    <wsdl:port name="MojServisSoap" binding="tns:MojServisSoap">
+      <soap:address location="http://localhost:60239/MojServis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MojServisSoap12" binding="tns:MojServisSoap12">
+      <soap12:address location="http://localhost:60239/MojServis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
